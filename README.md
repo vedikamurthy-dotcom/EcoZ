@@ -5,9 +5,12 @@ PROJECT OVERVIEW
 
 EcoZ sits at the intersection of three important areas: sustainable computing, enterprise workload scheduling, and electricity carbon-intensity forecasting.
 A. Enterprise batch processing
+
 Banks and other enterprises run jobs such as reporting, reconciliation, risk calculations and payroll processing. Some have strict deadlines, while others have execution windows in which they can be moved. EcoZ focuses on the flexible jobs.
+
 B. Carbon-aware computing
 The emissions associated with a unit of electricity vary by grid, location and time. The Green Software Foundation's Carbon Aware SDK describes ways to use emissions information to choose when or where software workloads run. 
+
 C. Scheduling and decision support
 The application combines a job's permitted execution window with hourly carbon-intensity estimates. It chooses a lower-carbon feasible time, then shows the original schedule, proposed schedule and estimated emissions difference.
 
