@@ -139,17 +139,29 @@ Reliability monitoring and recovery mechanisms operate across the architecture.
 
 9. Architecture Diagram
 flowchart TD
+
     A["Commercial and Sovereign Operators"]
+   
     B["Public Catalogs and Simulated Orbital Data"]
+   
     C["Secure Ingestion and Identity Validation"]
+   
     D["IBM LinuxONE or Supported Secure Compute"]
+   
     E["Orbital State Preparation and Propagation"]
+   
     F["Spatial and Temporal Candidate Screening"]
+   
     G["Closest Approach and Risk Analysis"]
+   
     H["AI-Assisted Prioritization"]
+   
     I["Policy-Based Coordination"]
+   
     J["Operations Dashboard"]
+   
     K["Authorized Operator Alerts"]
+   
     L["Audit, Monitoring, Failover and Recovery"]
 
     A --> C
@@ -162,7 +174,6 @@ flowchart TD
     H --> I
     I --> J
     I --> K
-
     L -.-> D
     L -.-> F
     L -.-> G
