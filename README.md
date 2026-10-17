@@ -25,6 +25,7 @@ Evaluate candidate maneuvers, operational constraints, and the possibility that 
 
 5. Maintain reliable operations
 Design for fault tolerance, continuous monitoring, auditability, and recovery so that a service interruption does not silently eliminate collision warnings.
+
 PROBLEM STATEMENT
 
 The rapid expansion of low Earth orbit satellite constellations has increased the complexity of identifying, evaluating, and preventing potential collisions between operational satellites and space debris. Existing collision-avoidance coordination faces challenges involving large-scale orbital-data processing, uncertainty in predicted trajectories, limited interoperability, and the reluctance of competing commercial and sovereign operators to disclose sensitive orbital information.
