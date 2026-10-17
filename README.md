@@ -41,15 +41,20 @@ The rapid expansion of low Earth orbit satellite constellations has increased th
 Traditional centralized coordination approaches may require access to detailed trajectory data, creating concerns about confidentiality, national security, intellectual property, and data governance. At the same time, inefficient screening, delayed warnings, uncoordinated maneuvers, or service interruptions can reduce the time available for safe decision-making.
 
 The problem is to design a scalable, secure, and resilient satellite collision-risk coordination platform that can efficiently screen large orbital datasets, accurately assess potentially dangerous conjunctions, preserve the confidentiality of participating operators' sensitive data, and deliver timely, actionable warnings and maneuver recommendations.
+
 Challenge B: Sensitive orbital data
 Exact trajectories and planned maneuvers may reveal operational details.
 The system should limit access to raw inputs and investigate whether privacy-preserving computation can support joint risk analysis.
+
 Challenge C: Collision-risk estimation
 Distance alone does not establish collision probability. The system must distinguish a geometrically close approach from a statistically meaningful collision risk.
+
 Challenge D: Coordination
 A proposed maneuver for one satellite can affect other encounter predictions. Recommendations must be evaluated against relevant constraints rather than treated as independent commands.
+
 Challenge E: Reliability
 A critical coordination service needs monitoring, tested recovery procedures, and redundant components. High availability must be demonstrated through engineering and testing rather than assumed from the underlying hardware.
+
 Primary objectives:
 
 Build a reproducible orbital-data simulation.
@@ -60,6 +65,7 @@ Build an interactive dashboard showing object data, alerts, and system status.
 Demonstrate the proposed confidential-computing architecture.
 Establish a clear six-person workflow across three devices.
 Prepare a concise, technically credible datathon presentation.
+
  Secondary objectives:
  
 Explore orbital propagation from public two-line element (TLE) data.
@@ -95,12 +101,10 @@ Reduce unnecessary detailed calculations through efficient screening.
 Preserve sensitive orbital data wherever technically feasible.
 Produce prioritized collision alerts and explainable risk metrics.
 Support coordinated maneuver evaluation between participating operators.
+
 Layer 3: Protected computing environment
-
 The proposed secure computing layer uses IBM LinuxONE or another supported platform to host sensitive workloads.
-
 Possible controls include encryption, workload isolation, key management, authenticated services, and audited access.
-
 The exact mechanism depends on the hardware, operating system, and software configuration selected.
 
 Layer 4: Orbital preparation
@@ -181,3 +185,14 @@ flowchart TD
 
 Diagram interpretation: Data enters through validated interfaces, is prepared for orbital analysis, and passes through screening and risk assessment. The coordination layer applies disclosure policies before sending results to authorized users.
 
+Expected outcomes:
+
+Reduce the time needed to identify potentially dangerous satellite encounters.
+
+Reduce unnecessary detailed calculations through efficient screening.
+
+Preserve sensitive orbital data wherever technically feasible.
+
+Produce prioritized collision alerts and explainable risk metrics.
+
+Support coordinated maneuver evaluation between participating operators.
