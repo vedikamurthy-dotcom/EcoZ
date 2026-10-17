@@ -1,24 +1,34 @@
-# EcoZ
-EcoZ is a carbon aware workload schedular for enterprise batch processing system and recommends better execution times without violating their deadlines.
+# ORBTIAL Z 
+Earth's low Earth orbit (LEO) is becoming increasingly crowded due to the rapid growth of satellite constellations used for internet connectivity, Earth observation, navigation, scientific research, and national security. As the number of satellites and pieces of space debris increases, identifying potential collisions and coordinating avoidance maneuvers becomes an increasingly complex challenge.
+
+A collision between satellites can produce thousands of fragments of high-speed debris. These fragments may damage other spacecraft, disrupt essential satellite services, and increase the risk of further collisions. This cascading risk is commonly associated with the concept of Kessler syndrome.
+
+Existing space surveillance and collision-warning systems depend on collecting, comparing, and exchanging orbital information. However, satellite operators may be reluctant to share precise trajectories, maneuver plans, or sensor data because this information can reveal commercially sensitive operations or national-security capabilities.
+ORBITAL-Z addresses this coordination challenge by proposing a secure, high-throughput computing platform that enables multiple satellite operators to assess collision risks while protecting the confidentiality of their sensitive orbital information.
 
 PROJECT OVERVIEW 
 
-EcoZ sits at the intersection of three important areas: sustainable computing, enterprise workload scheduling, and electricity carbon-intensity forecasting.
-A. Enterprise batch processing
+ORBITAL-Z receives authorized orbital information, evaluates possible close approaches, and provides risk alerts and maneuver recommendations through a controlled interface.
 
-Banks and other enterprises run jobs such as reporting, reconciliation, risk calculations and payroll processing. Some have strict deadlines, while others have execution windows in which they can be moved. EcoZ focuses on the flexible jobs.
+Main objectives
+1. Detect potential collisions
+Analyze satellite positions, velocities, orbital predictions, and uncertainty to identify close approaches.
 
-B. Carbon-aware computing
-The emissions associated with a unit of electricity vary by grid, location and time. The Green Software Foundation's Carbon Aware SDK describes ways to use emissions information to choose when or where software workloads run. 
+2. Protect confidential orbital data
+Use encryption, strict access controls, and an appropriately configured confidential-computing environment to restrict access to sensitive trajectories.
 
-C. Scheduling and decision support
-The application combines a job's permitted execution window with hourly carbon-intensity estimates. It chooses a lower-carbon feasible time, then shows the original schedule, proposed schedule and estimated emissions difference.
+3. Assess risk intelligently
+   Combine physics-based calculations with AI-assisted prioritization to identify encounters that require urgent review.
 
-PROBLEM STATEMENT 
+4. Coordinate avoidance decisions
+Evaluate candidate maneuvers, operational constraints, and the possibility that one maneuver could create a new collision risk for another satellite.
 
-Problem Statement — EcoZ: Carbon-Aware Enterprise Workload Scheduler
-Enterprise systems execute batch-processing workloads according to predefined schedules that are primarily designed around business deadlines and operational requirements. However, flexible workloads may be executed during periods when the electricity grid has relatively high carbon intensity, resulting in avoidable electricity-related emissions.
-Traditional fixed-time scheduling does not necessarily account for changes in grid carbon intensity. At the same time, postponing workloads without considering deadlines, execution duration, priority and dependencies can create operational risks.
-The proposed EcoZ system aims to develop an interactive, carbon-aware scheduling dashboard that evaluates eligible enterprise jobs against hourly electricity carbon-intensity data and recommends lower-carbon execution windows.
-The system will estimate baseline and proposed emissions, identify potential carbon savings, and enforce configurable execution-window and deadline constraints. It will provide visual analytics to help users understand the environmental benefits and scheduling trade-offs.
-The prototype will first use clearly identified simulated data and will be designed to support integration with real carbon-intensity APIs and enterprise scheduling systems in future versions.
+5. Maintain reliable operations
+Design for fault tolerance, continuous monitoring, auditability, and recovery so that a service interruption does not silently eliminate collision warnings.
+PROBLEM STATEMENT
+
+The rapid expansion of low Earth orbit satellite constellations has increased the complexity of identifying, evaluating, and preventing potential collisions between operational satellites and space debris. Existing collision-avoidance coordination faces challenges involving large-scale orbital-data processing, uncertainty in predicted trajectories, limited interoperability, and the reluctance of competing commercial and sovereign operators to disclose sensitive orbital information.
+
+Traditional centralized coordination approaches may require access to detailed trajectory data, creating concerns about confidentiality, national security, intellectual property, and data governance. At the same time, inefficient screening, delayed warnings, uncoordinated maneuvers, or service interruptions can reduce the time available for safe decision-making.
+
+The problem is to design a scalable, secure, and resilient satellite collision-risk coordination platform that can efficiently screen large orbital datasets, accurately assess potentially dangerous conjunctions, preserve the confidentiality of participating operators' sensitive data, and deliver timely, actionable warnings and maneuver recommendations.
