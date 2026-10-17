@@ -75,6 +75,19 @@ The system does not label every close geometric distance as a confirmed collisio
 Orbital state preparation:
 For the initial prototype, use synthetic Cartesian positions in kilometers and velocities in kilometers per second. This keeps the first demonstration straightforward.
 For a more realistic version, obtain public TLE data and propagate it using a validated orbital library. TLE parameters must not be interpreted as Cartesian coordinates without propagation and coordinate-frame conversion.
+ARCHITECTURE:
+Layer 1: Orbital data sources
+
+Sources may include:
+Synthetic orbital state records.
+Public orbital catalogs.
+Authorized tracking observations.
+Operator-supplied state estimates.
+Each input should have a timestamp, coordinate frame, units, and identifier.
+
+Layer 2: Secure ingestion
+
+The ingestion layer validates data, authenticates its source, and applies access policies.
 Expected outcomes:
 The proposed system aims to:
 Reduce the time needed to identify potentially dangerous satellite encounters.
@@ -82,3 +95,78 @@ Reduce unnecessary detailed calculations through efficient screening.
 Preserve sensitive orbital data wherever technically feasible.
 Produce prioritized collision alerts and explainable risk metrics.
 Support coordinated maneuver evaluation between participating operators.
+Layer 3: Protected computing environment
+
+The proposed secure computing layer uses IBM LinuxONE or another supported platform to host sensitive workloads.
+
+Possible controls include encryption, workload isolation, key management, authenticated services, and audited access.
+
+The exact mechanism depends on the hardware, operating system, and software configuration selected.
+
+Layer 4: Orbital preparation
+
+The system normalizes timestamps, coordinate frames, units, and object identifiers.
+
+When TLE data is used, a suitable orbital propagation library must convert the orbital elements into time-specific state vectors.
+
+Layer 5: Conjunction screening
+
+The engine identifies potentially close encounters using spatial filtering and temporal constraints.
+
+Only candidate pairs are sent to more expensive analysis.
+
+Layer 6: Collision-risk analysis
+
+The analysis layer calculates closest approach and miss distance, and can estimate collision probability when sufficient uncertainty information is available.
+
+Layer 7: AI-assisted decision support
+
+This layer ranks alerts, summarizes risk factors, and can compare candidate maneuvers.
+
+For the prototype, deterministic screening and explainable rules should remain the primary safety logic.
+
+Layer 8: Secure coordination
+
+The coordination layer determines which operators may see which results.
+
+It can provide operator-specific warnings without automatically distributing all raw input records.
+
+Layer 9: User interface and audit
+
+The dashboard presents alerts and processing metrics. Audit records capture authorized access and significant system events.
+
+Reliability monitoring and recovery mechanisms operate across the architecture.
+
+9. Architecture Diagram
+flowchart TD
+    A["Commercial and Sovereign Operators"]
+    B["Public Catalogs and Simulated Orbital Data"]
+    C["Secure Ingestion and Identity Validation"]
+    D["IBM LinuxONE or Supported Secure Compute"]
+    E["Orbital State Preparation and Propagation"]
+    F["Spatial and Temporal Candidate Screening"]
+    G["Closest Approach and Risk Analysis"]
+    H["AI-Assisted Prioritization"]
+    I["Policy-Based Coordination"]
+    J["Operations Dashboard"]
+    K["Authorized Operator Alerts"]
+    L["Audit, Monitoring, Failover and Recovery"]
+
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    I --> K
+
+    L -.-> D
+    L -.-> F
+    L -.-> G
+    L -.-> I
+
+Diagram interpretation: Data enters through validated interfaces, is prepared for orbital analysis, and passes through screening and risk assessment. The coordination layer applies disclosure policies before sending results to authorized users.
+
