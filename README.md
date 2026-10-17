@@ -9,6 +9,14 @@ ORBITAL-Z addresses this coordination challenge by proposing a secure, high-thro
 PROJECT OVERVIEW 
 
 ORBITAL-Z receives authorized orbital information, evaluates possible close approaches, and provides risk alerts and maneuver recommendations through a controlled interface.
+Project vision
+To make cooperation in space safer by enabling satellite operators to coordinate collision-risk assessment without requiring unrestricted disclosure of sensitive orbital data.
+Core value proposition
+ORBITAL-Z brings together four capabilities:
+Safety: Identify potentially dangerous close approaches.
+Confidentiality: Minimize the exposure of sensitive orbital data.
+Performance: Screen large datasets efficiently and measure processing latency.
+Coordination: Present understandable warnings and maneuver-analysis results to authorized operators.
 
 Main objectives
 1. Detect potential collisions
@@ -33,3 +41,44 @@ The rapid expansion of low Earth orbit satellite constellations has increased th
 Traditional centralized coordination approaches may require access to detailed trajectory data, creating concerns about confidentiality, national security, intellectual property, and data governance. At the same time, inefficient screening, delayed warnings, uncoordinated maneuvers, or service interruptions can reduce the time available for safe decision-making.
 
 The problem is to design a scalable, secure, and resilient satellite collision-risk coordination platform that can efficiently screen large orbital datasets, accurately assess potentially dangerous conjunctions, preserve the confidentiality of participating operators' sensitive data, and deliver timely, actionable warnings and maneuver recommendations.
+Challenge B: Sensitive orbital data
+Exact trajectories and planned maneuvers may reveal operational details.
+The system should limit access to raw inputs and investigate whether privacy-preserving computation can support joint risk analysis.
+Challenge C: Collision-risk estimation
+Distance alone does not establish collision probability. The system must distinguish a geometrically close approach from a statistically meaningful collision risk.
+Challenge D: Coordination
+A proposed maneuver for one satellite can affect other encounter predictions. Recommendations must be evaluated against relevant constraints rather than treated as independent commands.
+Challenge E: Reliability
+A critical coordination service needs monitoring, tested recovery procedures, and redundant components. High availability must be demonstrated through engineering and testing rather than assumed from the underlying hardware.
+Primary objectives:
+
+Build a reproducible orbital-data simulation.
+Develop a Python engine that screens object pairs for potential close approaches.
+Generate structured encounter alerts.
+Measure execution time and throughput on available hardware.
+Build an interactive dashboard showing object data, alerts, and system status.
+Demonstrate the proposed confidential-computing architecture.
+Establish a clear six-person workflow across three devices.
+Prepare a concise, technically credible datathon presentation.
+ Secondary objectives:
+ 
+Explore orbital propagation from public two-line element (TLE) data.
+Investigate uncertainty-aware collision probability calculations.
+Demonstrate operator-specific access controls using simulated organizations.
+Compare naive all-pairs screening with a more efficient screening approach.
+Document the security assumptions and limitations of the prototype.
+
+Security demonstration:
+The team can explain its data-flow boundaries and access-control assumptions
+False positives:
+The system does not label every close geometric distance as a confirmed collision
+Orbital state preparation:
+For the initial prototype, use synthetic Cartesian positions in kilometers and velocities in kilometers per second. This keeps the first demonstration straightforward.
+For a more realistic version, obtain public TLE data and propagate it using a validated orbital library. TLE parameters must not be interpreted as Cartesian coordinates without propagation and coordinate-frame conversion.
+Expected outcomes:
+The proposed system aims to:
+Reduce the time needed to identify potentially dangerous satellite encounters.
+Reduce unnecessary detailed calculations through efficient screening.
+Preserve sensitive orbital data wherever technically feasible.
+Produce prioritized collision alerts and explainable risk metrics.
+Support coordinated maneuver evaluation between participating operators.
